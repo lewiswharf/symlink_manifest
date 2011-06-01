@@ -2,6 +2,8 @@
 
 The Symlink Manifest extension creates `manifest.dev` and `manifest.live` folders, and creates a symbolic link.
 
+Thanks to [Rowan Lewis](http://rowanlewis.com/using-git-and-symphony-cms) for the idea.
+
 - Version: 0.1
 - Author: Mark Lewis <mark@casadelewis.com>
 - Build Date: 01 June 2011
