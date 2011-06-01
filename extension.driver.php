@@ -1,10 +1,10 @@
 <?php
 	
-	class Extension_symlink_manifest_dev extends Extension {
+	class Extension_symlink_manifest extends Extension {
 		
 		public function about() {
 			return array(
-				'name'			=> 'Symlink Manifest (dev)',
+				'name'			=> 'Symlink Manifest',
 				'version'		=> '0.1',
 				'release-date'	=> '2011-06-01',
 				'author'		=> array(
