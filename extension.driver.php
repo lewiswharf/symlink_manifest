@@ -17,15 +17,15 @@
 		
 		public function install() {
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
-				if(is_dir($this->recurse_copy(MANIFEST, MANIFEST . '.dev'))) {
+				if($this->recurse_copy(MANIFEST, MANIFEST . '.dev')) {
 					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.dev', MANIFEST)) return true;
 				}
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
-				if(is_dir($this->recurse_copy(MANIFEST, MANIFEST . '.live'))) {
+				if($this->recurse_copy(MANIFEST, MANIFEST . '.live')) {
 					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.live', MANIFEST)) return true;
 				}
 			} elseif(!is_dir(MANIFEST . '.dev') && !is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
-				if(is_dir($this->recurse_copy(MANIFEST, MANIFEST . '.dev')) && is_dir($this->recurse_copy(MANIFEST, MANIFEST . '.live'))) {
+				if($this->recurse_copy(MANIFEST, MANIFEST . '.dev') && $this->recurse_copy(MANIFEST, MANIFEST . '.live')) {
 					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.dev', MANIFEST)) return true;
 				}
 			}
