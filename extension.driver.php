@@ -48,7 +48,7 @@
 			while(false !== ( $file = readdir($dir)) ) {
 				if (( $file != '.' ) && ( $file != '..' )) {
 						if ( is_dir($src . '/' . $file) ) {
-								recurse_copy($src . '/' . $file,$dst . '/' . $file);
+								$this->recurse_copy($src . '/' . $file,$dst . '/' . $file);
 						}
 						else {
 								copy($src . '/' . $file,$dst . '/' . $file);
@@ -63,7 +63,7 @@
 			 $objects = scandir($dir);
 			 foreach ($objects as $object) {
 				 if ($object != "." && $object != "..") {
-					 if (filetype($dir."/".$object) == "dir") rrmdir($dir."/".$object); else unlink($dir."/".$object);
+					 if (filetype($dir."/".$object) == "dir") $this->rrmdir($dir."/".$object); else unlink($dir."/".$object);
 				 }
 			 }
 			 reset($objects);
