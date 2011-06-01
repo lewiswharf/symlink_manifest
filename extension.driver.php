@@ -35,6 +35,21 @@
 			}
 			return false;
 		}
+
+		public function enable() {
+			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
+				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
+				$this->rrmdir(MANIFEST);
+				if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+				
+			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
+					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
+					$this->rrmdir(MANIFEST);
+					if(symlink(MANIFEST . '.live', MANIFEST)) return true;
+					
+			}
+			return false;
+		}
 		
 		public function uninstall() {
   		if(linkinfo(MANIFEST)) {
