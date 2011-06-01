@@ -17,17 +17,21 @@
 		
 		public function install() {
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
-				if($this->recurse_copy(MANIFEST, MANIFEST . '.dev')) {
-					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.dev', MANIFEST)) return true;
-				}
+				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
+				$this->rrmdir(MANIFEST);
+				if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+				
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
-				if($this->recurse_copy(MANIFEST, MANIFEST . '.live')) {
-					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.live', MANIFEST)) return true;
-				}
+					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
+					$this->rrmdir(MANIFEST);
+					if(symlink(MANIFEST . '.live', MANIFEST)) return true;
+					
 			} elseif(!is_dir(MANIFEST . '.dev') && !is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
-				if($this->recurse_copy(MANIFEST, MANIFEST . '.dev') && $this->recurse_copy(MANIFEST, MANIFEST . '.live')) {
-					if($this->rrmdir(MANIFEST) && symlink(MANIFEST . '.dev', MANIFEST)) return true;
-				}
+					$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
+					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
+					$this->rrmdir(MANIFEST);
+					if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+				
 			}
 			return false;
 		}
