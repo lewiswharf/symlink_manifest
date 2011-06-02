@@ -25,7 +25,7 @@ The Symlink Manifest extension creates `manifest.dev` and `manifest.live` folder
 	 
 4. After installing for the first time, configure `manifest.live/config.php` to reflect configuration (i.e. database details) for the live server.
 
-*NOTE: Fresh install will copy `manifest` folder to `manifest.dev` and `manifest.live` folders, with a symbolic link to `mainfest.dev` folder*.
+*NOTE: Fresh install will copy `manifest` folder to `manifest.dev` and `manifest.live` folders, with a symbolic link to `manifest.dev` folder*.
 
 ##Uninstall
 
