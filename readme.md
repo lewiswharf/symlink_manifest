@@ -20,12 +20,20 @@ Thanks to [Rowan Lewis](http://rowanlewis.com/using-git-and-symphony-cms) for th
         1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
         2. Upload `manifest.live` and `manifest.dev` folders to live server. Rename `manifest.live` folder to `manifest`.
     - **To dev**
-        1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstallfrom the with-selected menu, then click Apply.
+        1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
         2. Download `manifest.live` and `manifest.dev` folders to dev server. Rename `manifest.dev` folder to `manifest`.
 3. Enable extension by selecting the "Symlink Manifest" item under Extensions, choose Enable
    from the with-selected menu, then click Apply.
+	 
+4. After installing for the first time, configure `manifest.live/config.php` to reflect configuration (i.e. database details) for the live server.
 
-*NOTE: Fresh install will copy `maifest` folder to `manifest.dev` and `manifest.live` folders, with a symbolic link to `maifest.dev` folder*.
+*NOTE: Fresh install will copy `manifest` folder to `manifest.dev` and `manifest.live` folders, with a symbolic link to `maifest.dev` folder*.
+
+##Uninstall
+
+1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
+
+*NOTE: Uninstall an extension will leave `manifest.dev` and `manifest.live` folders, and delete symbolic link*.
 
 ##History
 
