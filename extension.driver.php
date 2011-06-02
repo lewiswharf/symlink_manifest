@@ -5,7 +5,7 @@
 		public function about() {
 			return array(
 				'name'			=> 'Symlink Manifest',
-				'version'		=> '0.1',
+				'version'		=> '0.2',
 				'release-date'	=> '2011-06-01',
 				'author'		=> array(
 					'name'			=> 'Mark Lewis',
