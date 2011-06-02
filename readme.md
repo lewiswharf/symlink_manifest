@@ -1,8 +1,6 @@
 #Symlink Manifest
 
-The Symlink Manifest extension creates `manifest.dev` and `manifest.live` folders, and creates a symbolic link.
-
-Thanks to [Rowan Lewis](http://rowanlewis.com/using-git-and-symphony-cms) for the idea.
+The Symlink Manifest extension creates `manifest.dev` and `manifest.live` folders, and creates a symbolic link. Thanks to [Rowan Lewis](http://rowanlewis.com/using-git-and-symphony-cms) for the idea.
 
 - Version: 0.2
 - Author: Mark Lewis <mark@casadelewis.com>
@@ -33,7 +31,7 @@ Thanks to [Rowan Lewis](http://rowanlewis.com/using-git-and-symphony-cms) for th
 
 1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
 
-*NOTE: Uninstall an extension will leave `manifest.dev` and `manifest.live` folders, and delete symbolic link*.
+*NOTE: Uninstalling extension will leave `manifest.dev` and `manifest.live` folders, and delete symbolic link*.
 
 ##History
 
