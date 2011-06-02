@@ -54,6 +54,7 @@
 		public function uninstall() {
   		if(linkinfo(MANIFEST)) {
 				unlink(MANIFEST);
+				rmdir(MANIFEST);
 			}
 		}
 		
