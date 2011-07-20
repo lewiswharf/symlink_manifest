@@ -15,11 +15,11 @@ The Symlink Manifest extension creates `manifest.dev` and `manifest.live` folder
     - **Fresh install on dev**
         1. Ensure `manifest` folder exists.
     - **To live**
-        1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
-        2. Upload `manifest.live` and `manifest.dev` folders to live server. Rename `manifest.live` folder to `manifest`.
+        1. Upload `manifest.live` and `manifest.dev` folders to live server. Rename `manifest.live` folder to `manifest`.
+        2. On live server, uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
     - **To dev**
-        1. Uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
-        2. Download `manifest.live` and `manifest.dev` folders to dev server. Rename `manifest.dev` folder to `manifest`.
+        1. Download `manifest.live` and `manifest.dev` folders to dev server. Rename `manifest.dev` folder to `manifest`.
+        2. On dev server, uninstall extension by selecting the "Symlink Manifest" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
 3. Enable extension by selecting the "Symlink Manifest" item under Extensions, choose Enable
    from the with-selected menu, then click Apply.
 	 
