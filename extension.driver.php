@@ -5,8 +5,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Symlink Manifest',
-				'version'		=> '0.2',
-				'release-date'	=> '2011-06-01',
+				'version'		=> '0.3',
+				'release-date'	=> '2011-07-20',
 				'author'		=> array(
 					'name'			=> 'Mark Lewis',
 					'website'		=> 'http://casadelewis.com',
@@ -19,18 +19,24 @@
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 				$this->rrmdir(MANIFEST);
-				if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+				exec('ln -s ' . MANIFEST . '.dev manifest');
+				
+				return true;
 				
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					if(symlink(MANIFEST . '.live', MANIFEST)) return true;
+					exec('ln -s ' . MANIFEST . '.live manifest');
+					
+					return true;
 					
 			} elseif(!is_dir(MANIFEST . '.dev') && !is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+					exec('ln -s ' . MANIFEST . '.dev manifest');
+					
+					return true;
 				
 			}
 			return false;
@@ -40,12 +46,16 @@
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 				$this->rrmdir(MANIFEST);
-				if(symlink(MANIFEST . '.dev', MANIFEST)) return true;
+				exec('ln -s ' . MANIFEST . '.dev manifest');
+				
+				return true;
 				
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					if(symlink(MANIFEST . '.live', MANIFEST)) return true;
+					exec('ln -s ' . MANIFEST . '.live manifest');
+					
+					return true;
 					
 			}
 			return false;
