@@ -19,23 +19,29 @@
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 				$this->rrmdir(MANIFEST);
-				exec('ln -s ' . MANIFEST . '.dev manifest');
-				
+				exec('ln -s ' . MANIFEST . '.dev manifest', $output);
+					if(empty($output)) {
+						symlink(MANIFEST . '.dev', 'manifest');
+					}
 				return true;
 				
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					exec('ln -s ' . MANIFEST . '.live manifest');
-					
+					exec('ln -s ' . MANIFEST . '.live manifest', $output);
+					if(empty($output)) {
+						symlink(MANIFEST . '.dev', 'manifest');
+					}
 					return true;
 					
 			} elseif(!is_dir(MANIFEST . '.dev') && !is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					exec('ln -s ' . MANIFEST . '.dev manifest');
-					
+					exec('ln -s ' . MANIFEST . '.dev manifest', $output);
+					if(empty($output)) {
+						symlink(MANIFEST . '.dev', 'manifest');
+					}
 					return true;
 				
 			}
@@ -46,15 +52,19 @@
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
 				$this->rrmdir(MANIFEST);
-				exec('ln -s ' . MANIFEST . '.dev manifest');
-				
+				exec('ln -s ' . MANIFEST . '.dev manifest', $output);
+				if(empty($output)) {
+					symlink(MANIFEST . '.dev', 'manifest');
+				}
 				return true;
 				
 			} elseif(!is_dir(MANIFEST . '.live') && is_dir(MANIFEST . '.dev') && is_dir(MANIFEST)) {
 					$this->recurse_copy(MANIFEST, MANIFEST . '.live');
 					$this->rrmdir(MANIFEST);
-					exec('ln -s ' . MANIFEST . '.live manifest');
-					
+					exec('ln -s ' . MANIFEST . '.live manifest', $output);
+					if(empty($output)) {
+						symlink(MANIFEST . '.dev', 'manifest');
+					}
 					return true;
 					
 			}
