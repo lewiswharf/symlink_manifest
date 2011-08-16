@@ -5,8 +5,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Symlink Manifest',
-				'version'		=> '0.3',
-				'release-date'	=> '2011-07-20',
+				'version'		=> '0.4',
+				'release-date'	=> '2011-08-13',
 				'author'		=> array(
 					'name'			=> 'Mark Lewis',
 					'website'		=> 'http://casadelewis.com',
