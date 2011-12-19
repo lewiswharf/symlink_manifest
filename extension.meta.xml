@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="symlink_manifest" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Symlink Manifest</name>
+	<description>Simplify dev/live server workflow.</description>
+	<repo type="github">https://github.com/lewiswharf/symlink_manifest</repo>
+	<url type="discuss">http://symphony-cms.com/discuss/thread/70469/</url>
+	<types>
+		<type>Workflow</type>
+	</types>
+	<authors>
+		<author>
+			<name github="lewiswharf" symphony="Lewis">Mark Lewis</name>
+			<website>http://casadelewis.com</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="0.4" date="2011-08-13" min="2.2" />
+	</releases>
+</extension>
