@@ -1,20 +1,7 @@
 <?php
 	
 	class Extension_symlink_manifest extends Extension {
-		
-		public function about() {
-			return array(
-				'name'			=> 'Symlink Manifest',
-				'version'		=> '0.4',
-				'release-date'	=> '2011-08-13',
-				'author'		=> array(
-					'name'			=> 'Mark Lewis',
-					'website'		=> 'http://casadelewis.com',
-					'email'			=> 'mark@casadelewis.com'
-				)
-			);
-		}
-		
+				
 		public function install() {
 			if(!is_dir(MANIFEST . '.dev') && is_dir(MANIFEST . '.live') && is_dir(MANIFEST)) {
 				$this->recurse_copy(MANIFEST, MANIFEST . '.dev');
